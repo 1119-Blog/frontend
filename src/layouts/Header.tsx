@@ -1,12 +1,12 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { NavLink } from "react-router-dom";
-import { useAuthStore, login, logout } from "@/store/authStore";
+import { useAuthStore } from "@/store/authStore";
 
 export default function Header() {
-  const { isLogin, user } = useAuthStore();
+  const { isLogin, login, logout } = useAuthStore();
 
   const handleLogin = () => {
-    login("user", "user@naver.com");
+    login();
   };
 
   return (
@@ -28,8 +28,8 @@ export default function Header() {
             {isLogin ? (
               <>
                 <div className="truncate bg-white w-full p-1">
-                  <div>{user?.nickname}</div>
-                  <div>{user?.email}</div>
+                  <div>nickname</div>
+                  <div>user.email</div>
                 </div>
                 <MenuItem>
                   <div className="px-1 pt-1">
