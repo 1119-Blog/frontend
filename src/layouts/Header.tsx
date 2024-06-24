@@ -10,15 +10,14 @@ export default function Header() {
   };
 
   return (
-    <header className="shadow sticky top-0">
-      <nav className="flex items-center justify-between px-6 py-1">
-        <NavLink to={"/"}>
-          <img src="/brand.svg" alt="brand" className="h-7 w-auto"></img>
-        </NavLink>
-
+    <header className="shadow sticky flex top-0 justify-between px-5 pt-1.5">
+      <NavLink to={"/"}>
+        <img src="/brand.svg" alt="brand" className="h-6 w-auto"></img>
+      </NavLink>
+      <nav>
         <Menu>
           <MenuButton>
-            <img src="/user.svg" alt="user" className="h-7 w-auto"></img>
+            <img src="/user.svg" alt="user" className="h-6 w-auto"></img>
           </MenuButton>
 
           {/* 프로필 바 dropdown menu */}
@@ -44,15 +43,18 @@ export default function Header() {
                 </MenuItem>
                 <MenuItem>
                   <div className="px-1 pb-1">
-                    <div onClick={logout}>로그아웃</div>
+                    <button type="button" onClick={logout}>
+                      로그아웃
+                    </button>
                   </div>
                 </MenuItem>
               </>
             ) : (
               <MenuItem>
                 <div className="px-1 py-1">
-                  {/* <NavLink to={"/login"}>로그인</NavLink> */}
-                  <div onClick={handleLogin}>로그인</div>
+                  <button type="button" onClick={handleLogin}>
+                    로그인
+                  </button>
                 </div>
               </MenuItem>
             )}
