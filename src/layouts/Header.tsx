@@ -1,10 +1,9 @@
-import React from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { NavLink } from "react-router-dom";
-import { useAuthStore } from "@/store/store";
+import { useAuthStore, login, logout } from "@/store/authStore";
 
 export default function Header() {
-  const { isLogin, user, login, logout } = useAuthStore();
+  const { isLogin, user } = useAuthStore();
 
   const handleLogin = () => {
     login("user", "user@naver.com");
